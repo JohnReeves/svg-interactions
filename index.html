@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<svg id="svg" height="600" width="600">
+
+		<polygon points="0,0 600,0 600,600 0,600" fill="#e9e9e9" />
+
+		<!--circles to play with-->
+		<circle id="green" cx="100" cy="100" r="50" fill="#7cb342" />
+		<circle id="indigo" cx="100" cy="100" r="50" fill="#3f51b5" />
+		<circle id="pink" cx="100" cy="100" r="50" fill="#c51162" />
+		<circle id="yellow" cx="100" cy="100" r="50" fill="#ffcc00" />
+
+		<!-- pots they have to go into -->
+		<polygon id="yellowBox" points="0,300 150,300 150,450 0,450" fill="#ffcc00" fill-opacity="0.6" />
+		<polygon id="greenBox" points="150,300 300,300 300,450 150,450" fill="#7cb342" fill-opacity="0.6" />
+		<polygon id="indigoBox" points="300,300 450,300 450,450 300,450" fill="#3f51b5" fill-opacity="0.6" />
+		<polygon id="pinkBox" points="450,300 600,300 600,450 450,450" fill="#c51162" fill-opacity="0.6" />
+
+	</svg>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="script.js">
+	</script>
+</body>
+
+</html>
