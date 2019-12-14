@@ -1,9 +1,10 @@
+var mouseDown = false;
 
+// register mouse events
 addAllTouchEvents("#green");
 addAllTouchEvents("#indigo");
 addAllTouchEvents("#pink");
 addAllTouchEvents("#yellow");
-var mouseDown = false;
 
 function addAllTouchEvents(element){
 
@@ -16,18 +17,19 @@ function addAllTouchEvents(element){
     $(element).on("touchcancel", dealWithTouch); 
 }
 
+// handle mouse events
 function dealWithTouch(event) {
     event.preventDefault();
     
     if(event.type== "mousedown" || event.type=="touchstart"){
         mouseDown = true;
-        console.log(event);
+        // console.log(event);
         
        $(event.target.parentElement).append( event.target );
         
     } if(event.type== "mouseup" || event.type=="touchend"){
         mouseDown = false;
-        console.log(event);
+        // console.log(event);
     } else if( (event.type== "mousemove" && mouseDown) ) {
         
         var parentOffset = $(this).parent().offset(); 
@@ -59,9 +61,7 @@ function dealWithTouch(event) {
 function checkIfPointIsInCorrectSquare(userX, userY, circleID){
     
     var points = $("#"+circleID+"Box").attr("points");
-    
     var coords = points.split(" ");
-    
     var firstCoords = coords[0].split(",");
 
     var minX = parseInt(firstCoords[0]);
@@ -72,6 +72,7 @@ function checkIfPointIsInCorrectSquare(userX, userY, circleID){
 
     
     //find the smallest and largest coords
+    // can we use array.min & array.max
     for (var i = 0; i < coords.length; i++){
         
         var coord = coords[i].split(",");
@@ -83,7 +84,6 @@ function checkIfPointIsInCorrectSquare(userX, userY, circleID){
         
         if(y < minY) minY = y;
         if(y > maxY) maxY = y;
-
     }
     /*
     console.log("min x = " + minX);
@@ -92,13 +92,13 @@ function checkIfPointIsInCorrectSquare(userX, userY, circleID){
     
     console.log("min y = " + minY);
     console.log("max y = " + maxY);
-    console.log("y = " + userY);*/
+    console.log("y = " + userY);
+    */
     
-    if (userX > minX && userX < maxX
-           && userY > minY && userY < maxY){
-         console.log("in the middle!");
+    if (userX > minX && userX < maxX &&
+        userY > minY && userY < maxY){
+         // console.log("in the middle!");
         $("#"+circleID).attr("fill","#263238");
- 
     }
     
 }
