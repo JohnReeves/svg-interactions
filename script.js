@@ -23,13 +23,13 @@ function dealWithTouch(event) {
     
     if(event.type== "mousedown" || event.type=="touchstart"){
         mouseDown = true;
-        // console.log(event);
+        console.log(mouseDown, event);
         
        $(event.target.parentElement).append( event.target );
         
     } if(event.type== "mouseup" || event.type=="touchend"){
         mouseDown = false;
-        // console.log(event);
+        console.log(mouseDown, event);
     } else if( (event.type== "mousemove" && mouseDown) ) {
         
         var parentOffset = $(this).parent().offset(); 
